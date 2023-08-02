@@ -1,0 +1,23 @@
+body{font-family: 'Press Start 2P';background-image: url(re/violet.jpg);background-size: cover;
+  background-repeat: no-repeat;align-items: center;}
+
+.video{max-height:100%;
+  min-width: 50%;
+}
+
+.josuke {
+    font-weight: 200;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    color: aliceblue;
+  }
+.josuke .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+  .dio{text-align: left;top:-50vh}
+ 
+
+  

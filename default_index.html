@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<HTML> 
+<HEAD> 
+<link rel="stylesheet"  type="text/css" href="claire.css"   >
+
+<TITLE>Choix du jeux </TITLE>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+</style>
+</HEAD>
+<BODY>
+  <div class="galroumanie">
+    <a href="jotaro.html"><img class="imgro" src="re/jo.webp" style="width:100%"></a> 
+    <img class="imgro" src="re/slug.png" style="width:100%">
+    <img class="imgro" src="re/Donkey.webp" style="width:100%">
+    <img class="imgro" src="re/out.jpg" style="width:100%">
+    <button class="flecheg" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="fleched" onclick="plusDivs(1)">&#10095;</button>
+    <div id="MENU" class="burger">
+      <a href="javascript:void(0)" class="fermeture" onclick="playAudio(); openNav();"><h4>INSERT COIN<br>TO PLAY</h4></a>
+    </div>
+    <audio id="myAudio" src="re/CLIP - NOOB - Je suis un Noob (opening).mp3" autoplay></audio>
+  </div>
+
+  <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+      var i;
+      var x = document.getElementsByClassName("imgro");
+      if (n > x.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = x.length}
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      x[slideIndex-1].style.display = "block";  
+    }
+
+    function openNav() {
+      document.getElementById("MENU").style.width = "0%";
+    }
+
+    function playAudio() {
+      var audio = document.getElementById("myAudio");
+      audio.play();
+    }
+  </script>
+</BODY>      
+</HTML>
