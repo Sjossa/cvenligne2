@@ -1,31 +1,61 @@
 <!DOCTYPE html>
-<HTML> 
-<HEAD> 
-<link rel="stylesheet"  type="text/css" href="claire.css"   >
-
-<TITLE>Choix du jeux </TITLE>
-<meta charset="utf-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-</style>
-</HEAD>
-<BODY>
-  <div class="galroumanie">
-    <a href="jotaro.html"><img class="imgro" src="re/jo.webp" style="width:100%"></a> 
-    <img class="imgro" src="re/slug.png" style="width:100%">
-    <img class="imgro" src="re/Donkey.webp" style="width:100%">
-    <img class="imgro" src="re/out.jpg" style="width:100%">
-    <button class="flecheg" onclick="plusDivs(-1)">&#10094;</button>
-    <button class="fleched" onclick="plusDivs(1)">&#10095;</button>
-    <div id="MENU" class="burger">
-      <a href="javascript:void(0)" class="fermeture" onclick="playAudio(); openNav();"><h4>INSERT COIN<br>TO PLAY</h4></a>
-    </div>
-    <audio id="myAudio" src="re/CLIP - NOOB - Je suis un Noob (opening).mp3" autoplay></audio>
-  </div>
-
-  <script>
-    var slideIndex = 1;
+<html> 
+  <HEAD> 
+    <link rel="stylesheet" type="text/css" href="claire.css">
+  
+    <TITLE> Accueil</TITLE>
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+    </style>
+  </HEAD>
+  <BODY>
+    <div class="Titre"><p>Page de presentation</p></div>
+      <div class="fleche">
+        <div id="gi">
+          <video autoplay muted loop src="re/fond mp4.mp4"></video>
+        </div>
+        <div id="patron">
+          <p>Bonjour ! Je suis Johnny, un passionné de développement web. Avec une expertise dans les langages front-end tels que HTML, CSS et JavaScript,je crée des interfaces utilisateur interactives et esthétiques. Mon dévouement à concevoir des expériences utilisateur exceptionnelles et ma soif d'apprendre les dernières tendances du web me permettent de réaliser des projets web captivants. Toujours prêt à relever de nouveaux défis, je mets en œuvre des solutions créatives pour façonner l'avenir du web. En tant que développeur web, je suis convaincu que chaque ligne de code est une opportunité d'innover et de repousser les limites. Let's code and create together! 🚀</p>
+        </div>
+      
+        <div id="MOI" class="burger">
+          <a href="javascript:void(0)" class="fermeture" onclick="playAudio(); openNav();"><h4>INSERT COIN<br>TO PLAY</h4></a>
+        </div>
+        <audio id="myAudio" src="re/CLIP - NOOB - Je suis un Noob (opening).mp3" autoplay></audio>
+      
+      </div>
+      <div class="example-wrapper">
+        <div class="arrow-example -hidden">
+          <div class="dot -center"></div>
+          <div class="dot -center"></div>
+          <div class="dot -center"></div>
+          <div class="dot -center"></div>
+          <div class="dot -center"></div>
+          <div class="dot -center"></div>
+          <div class="dot -left-1"></div>
+          <div class="dot -left-2"></div>
+          <div class="dot -right-1"></div>
+          <div class="dot -right-2"></div>
+        </div>
+      </div>
+      <button id="openButton">Menu</button>
+        <div id="menu">
+          <h1 style="text-align: center;">choose your page</h1>
+          <div class="defilant">
+           <img class="site" src="re/blue.jpg">
+           
+           <img class="site" src="re/Screenshot_1.png" >
+         </div>
+         <button class="fle" onclick="plusDivs(-1)">&#10094;</button>
+         <button class="efl" onclick="plusDivs(1)">&#10095;</button>
+         
+          <button id="close"  >&#10007</button>
+        </div>
+    
+      <script> 
+            var slideIndex = 1;
     showDivs(slideIndex);
 
     function plusDivs(n) {
@@ -34,23 +64,94 @@
 
     function showDivs(n) {
       var i;
-      var x = document.getElementsByClassName("imgro");
+      var x = document.getElementsByClassName("site");
       if (n > x.length) {slideIndex = 1}
       if (n < 1) {slideIndex = x.length}
       for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";  
       }
       x[slideIndex-1].style.display = "block";  
-    }
+    }           
+      </script>
+        <script>/* premier menu disparition est text*/
+          var slideIndex = 1;
+          showDivs(slideIndex);
 
-    function openNav() {
-      document.getElementById("MENU").style.width = "0%";
-    }
+          function plusDivs(n) {
+            showDivs(slideIndex += n);}
 
-    function playAudio() {
-      var audio = document.getElementById("myAudio");
-      audio.play();
-    }
+          function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("site");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+
+          for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  }
+
+          x[slideIndex-1].style.display = "block";}
+
+          function openNav() {
+          document.getElementById("MOI").style.width = "0%";
+          patron();}
+
+          function playAudio() {
+          var audio = document.getElementById("myAudio");
+          audio.play();}
+
+          function patron() {  
+          var message = "Bonjour ! Je suis Johnny, un passionné de développement web.<br> Avec une expertise dans les langages front-end tels que HTML,<br> CSS et JavaScript,je crée des interfaces  interactives et esthétiques.<br> Mon dévouement à concevoir des expériences utilisateur exceptionnelles <br>et ma soif d'apprendre les dernières tendances du web me permettent<br> de réaliser des projets web captivants. Toujours prêt à relever<br> de nouveaux défis, je mets en œuvre des solutions créatives pour façonner<br> l'avenir du web. En tant que développeur web,<br> je suis convaincu que chaque ligne de code est une opportunité<br> d'innover et de repousser les limites. <br>Let's code and create together! 🚀";
+          var msgCount = 1;
+          var blinkCount = 0;
+          var blinkFlg = 0;
+          var timer1, timer2;
+          var patronElement = document.getElementById("patron");
+          var arrow = document.querySelector('.arrow-exmple')
+
+          function textFunc() {
+          patronElement.innerHTML = message.substring(0, msgCount);
+
+          if (msgCount == message.length) {
+          clearInterval(timer1);
+          arrow.classList.remove('-hidden');
+          timer2 = setInterval(blinkFunc, 200);} 
+          else { msgCount++;}}
+
+          function blinkFunc() {
+          if (blinkCount < 6) {
+          if (blinkFlg == 0) {
+          patronElement.innerHTML = message;
+          blinkFlg = 1;
+          blinkCount++;}
+          else {
+          patronElement.innerHTML = "";
+          blinkFlg = 0;}} else 
+          {
+          clearInterval(timer2);}}
+
+          timer1 = setInterval(textFunc, 13);}
+        </script>
+          <script>/* fleche */
+            let arrow = document.querySelector('.arrow-example');
+
+            setInterval(() => {arrow.classList.toggle('-hidden');}, 
+            1000);
+          </script>
+            <script>/* menu du bas */
+              document.addEventListener('DOMContentLoaded', () => {
+  const openButton = document.getElementById('openButton');
+  const menu = document.getElementById('menu');
+  const close = document.getElementById('close'); 
+
+  openButton.addEventListener('click', () => {
+    menu.style.bottom = '0';
+  });
+
+  
+  close.addEventListener('click', () => {
+    menu.style.bottom = '-100vh';
+  });
+});
   </script>
-</BODY>      
-</HTML>
+  </BODY>
+</html>

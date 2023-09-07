@@ -1,22 +1,145 @@
 <HTML> 
   <HEAD> 
   <link rel="stylesheet"  type="text/css" href="cassandra.css"  >
-  <script src="GT.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <TITLE>Experience Professionelles</TITLE>
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
   </style>
   </HEAD>
   <body>
-    <div class="video"><video  autoplay  muted src="re/jor.mp4"></video></div>
+    <div class="arcade-screen">
+      <div class="titre"><h1>Mes competence</h1></div>
     
-    <div class="josuke"><h1 style="text-align:center ;">Mes Experience Professionelles/competence </h1> </div>
+         <img class="logo" src="re/logo1.png">
+        <div id="progress-container">
+            <div id="progress-bar1"></div>
+        </div>
+      <br>
 
-  <div><h2 class="dio" style="text-align: left;">-Labelians,Pannes:<br>Preparateur <br>de commandes. </h2></div>
-  
-  
+      <img class="logoo" src="re/logo6.png">
+        <div id="progress-container2">
+            <div id="progress-bar6"></div>
+        </div>
+      <br>
 
-</body></HTML>
+     
+    
+      <img class="logo" id="logo2" src="re/logo2.png">
+      <div id="progress-container">
+        <div id="progress-bar2"></div>
+      </div>
+      <br>
+    
+      <img class="logo" id="logo2" src="re/logo3.png">
+      <div id="progress-container">
+        <div id="progress-bar3"></div>
+      </div>
+      <br>
+      <img class="logo" id="logo2" src="re/logo4.png">
+      <div id="progress-container">
+        <div id="progress-bar4"></div>
+      </div>
+
+      <br>
+      <img class="logo" id="logo" src="re/logo5.png">
+      <div id="progress-container">
+        <div id="progress-bar5"></div>
+      </div>
+    
+      
+    
+      <script>
+        setInterval(update, 100);
+
+function update() {
+  var element1 = document.getElementById("progress-bar1");
+  var element2 = document.getElementById("progress-bar2");
+  var element3 = document.getElementById("progress-bar3");
+  var element4 = document.getElementById("progress-bar4");
+  var element5 = document.getElementById("progress-bar5");
+  var element6 = document.getElementById("progress-bar6");
+  var width1 = parseInt(element1.style.width) || 1;
+  var width2 = parseInt(element2.style.width) || 1;
+  var width3 = parseInt(element3.style.width) || 1;
+  var width4 = parseInt(element4.style.width) || 1;
+  var width5 = parseInt(element5.style.width) || 1;
+  var width6 = parseInt(element6.style.width) || 1;
+
+  function scene1() {
+    if (width1 >= 80) {
+      clearInterval(identity1);
+    } else {
+      width1++;
+      element1.style.width = width1 + '%';
+      element1.innerHTML = width1 * 1  + '%';
+    }
+  }
+
+  function scene2() {
+    if (width2 >= 80) {
+      clearInterval(identity2);
+    } else {
+      width2++;
+      element2.style.width = width2 + '%';
+      element2.innerHTML = width2 * 1  + '%';
+    }
+  }
+
+  function scene3() {
+    if (width3 >= 10) {
+      clearInterval(identity3);
+    } else {
+      width3++;
+      element3.style.width = width3 + '%';
+      element3.innerHTML = width3 * 1 + '%';
+    }
+  }
+
+  function scene4() {
+    if (width4 >= 50) {
+      clearInterval(identity4);
+    } else {
+      width4++;
+      element4.style.width = width4 + '%';
+      element4.innerHTML = width4 * 1 + '%';
+    }
+  }
+  function scene5() {
+    if (width5 >= 2) {
+      clearInterval(identity5);
+    } else {
+      width5++;
+      element5.style.width = width5 + '%';
+      element5.innerHTML = width5 * 1 + '%';
+    }
+  }
+
+  function scene6() {
+    if (width6 >= 80) {
+      clearInterval(identity6);
+    } else {
+      width6++;
+      element6.style.width = width6 + '%';
+      element6.innerHTML = width6 * 1 + '%';
+    }
+  }
+
+  var identity1 = setInterval(scene1, 10);
+  var identity2 = setInterval(scene2, 10);
+  var identity3 = setInterval(scene3, 10);
+  var identity4 = setInterval(scene4, 10);
+  var identity5 = setInterval(scene5, 10);
+  var identity6 = setInterval(scene6, 10);
+      }
+      </script>
+    </div>
+
+ 
+ 
+</body>
+</HTML>
