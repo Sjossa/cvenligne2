@@ -1,58 +1,95 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin: 0;
-    background-color: black;
-   
-    ;
-}
-/*EFFET CATHODIQUE ARCADE */
-    .arcade-screen {
-        width: 100%; /* Ajustez la taille selon vos besoins */
-    height: 99%; /* Ajustez la taille selon vos besoins */
-        background-color: rgb(29, 22, 22);
-        border: 5px solid #00ff00; /* Couleur du cadre */
-        border-radius: 10px; /* Coins arrondis */
-        box-shadow: 0 0 20px rgba(90, 252, 90, 0.5); /* Effet de lumière */
-        position: relative;
-        overflow: hidDen;
-        
-    }
-
-/* Simulation des pixels sur l'écran */
-.arcade-screen::before {
-    content: '';
-    position:absolute   ;
-    width: 100%; /* Taille d'un pixel */
-    height: 100%; /* Taille d'un pixel */
-    background-color: #01ff6b69; /* Couleur du pixel */
-    z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #000000;
 }
 
-/* Créez des animations pour simuler un scintillement des pixels si nécessaire */
-@keyframes flicker {
-    0% {
-        opacity: 0.1;
-    }
-    50% {
-        opacity: 0.2;
-    }
-    100% {
-        opacity: 0.3;
-    }
+.arcade {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
 }
 
-.arcade-screen::before {
-    animation: flicker 0.1s infinite alternate;
+.screen {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(white, black);
+  background-size: 100% 300%; /* Augmentation de la taille du dégradé */
+  position: relative;
+  overflow: hidden;
+  animation: gradientAnimation 8s linear infinite alternate;}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
-.titre{ color: blue;text-align: center;}
+
+
+.scanlines {
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(45deg, rgba(231, 230, 230, 0.1) 0px, rgba(10, 0, 0, 0.1) 10px, transparent 10px, transparent 20px);
+  position: absolute;
+  animation: scanlines-animation 8s linear infinite alternate;
+  transform-origin: bottom;
+}
+
+.scanlines::after {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(45deg, rgba(231, 230, 230, 0.1) 0px, rgba(10, 0, 0, 0.1) 1px, transparent 5px, transparent 2px);
+  position: absolute;
+  animation: scanlines-animation 2s linear reverse;
+  transform-origin: bottom;
+  top: 100%;
+}
+
+.scanlines::after {
+  content: "";
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(45deg, rgba(231, 230, 230, 0.1) 0px, rgba(10, 0, 0, 0.1) 1px, transparent 10px, transparent 2px);
+  position: absolute;
+  animation: scanlines-animation 2s linear infinite ;
+  transform-origin: bottom;
+  top: 100%;
+}
+
+@keyframes scanlines-animation {
+  0% {
+      transform: translateY(0)  ;
+  }
+  100% {
+      transform: translateY(-10%) ;
+  }
+}
+
+
+
+
+
+
+
+
+
 /*barre*/
 #progress-container {
     background-color: #ddd;
     width: 50%;
+    position: relative;
 
      }
 
@@ -72,6 +109,7 @@ body {
     color: white;
     text-align: center;
     line-height: 30px;
+    
   }
   
   #progress-bar1 {
@@ -125,6 +163,6 @@ body {
 
 
 
-.logo{height: 11%;position: relative;top: -2;}
+.logo{height: 11%;position: relative;top: -2;left: 1%;}
 #logo2{left: 1%;}
-.logoo{height: 11%;position: absolute;right: 0;top: 15vh;}
+.logoo{height: 10%;position: relative;left: 80%; }
