@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!--<div id="con"></div>-->
+<div id="formulaire">
+    <fieldset>
+        <form onsubmit="return validateForm()">
+            <div class="prenom">
+                <label for="prenom">prenom</label>
+                <input type="text" id="prenom" name="prenom"   focus required>
+
+                <label for="Nom">Nom :</label>
+                <input type="text" id="Nom" name="NOM" >
+            </div>
+            <div class="adresse-mail">
+                <label for="adresse-mail">adresse mail</label>
+                <input type="email" id="adresse-mail" name="adresse-mail" >
+            </div>
+            <div class="message">
+                <label for="message">Votre message</label>
+                <textarea id="message" name="message" ></textarea>
+            </div>
+            <div class="bouton-envoyer">
+                <input type="submit" value="Envoyer">
+            </div>
+        </form>
+    </fieldset>
+
+</div>
+
+</body>
+</html>

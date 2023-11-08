@@ -1,0 +1,47 @@
+
+body {
+    background-color: black; 
+    @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+}
+
+
+    #con{
+        border:  49vh solid transparent; 
+        box-shadow: 0 0 8px 2px #f3f3f3;
+        border-radius: 30px;
+        
+    }
+
+#formulaire{
+   color: #f3f3f3;
+}
+input, textarea {
+    border: none;
+    background: transparent;
+    color: #f3f3f3;
+    outline: none;
+    }
+
+   
+
+
+  
+
+
+/*
+.image-clignote  {
+    animation-duration: 1s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+ }
+ 
+ @keyframes clignoter {
+   0%   { opacity:1; }
+   40%   {opacity:0; }
+   100% { opacity:1; }
+ }
+*/
+
+
+

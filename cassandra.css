@@ -79,15 +79,15 @@ body {
 
 /* Style du conteneur de barre de progression */
 .progress-container {
-  background-color: #e60e0e;
+  background-color: #faf2f2;
   width: 50%;
   position: relative;
 }
 
 /* Style du conteneur de la barre de progression 6 */
 .progress-container2 {
-  background-color: #ddd;
-  right: 50%;
+  background-color: #c01616;
+  width: 50%;
   position: relative;
 }
 
@@ -125,8 +125,7 @@ body {
   right: 0;
   top: 0;
   height: 100%;
-  width: 100%; /* Remarquez que la direction a été corrigée pour correspondre à la barre de progression 6 */
-  direction: rtl; /* Direction de droite à gauche pour la progression */
+color: red;
 }
 
 /* Styles pour les images de logo */

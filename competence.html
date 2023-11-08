@@ -139,24 +139,21 @@
   </script>
 
   <script>
-    // Mettre à jour la barre de progression 6 toutes les 100 millisecondes
-    setInterval(update2, 100);
+   setInterval(update, 100);
 
-    function update2() {
-      var element6 = document.getElementById("progress-bar6");
-      var width6 = parseInt(element6.style.width) || 100;
-      function scene6() {
-        if (width6 <= 0) {
-          clearInterval(identity6);
+   var element6 = document.getElementById("progress-bar6");
+   var width6 = parseInt(element6.style.width) || 1;
+   function scene6() {
+        if (width6 >= 25) {
+          clearInterval(identity5);
         } else {
-          width6--;
+          width6++;
           element6.style.width = width6 + '%';
           element6.innerHTML = width6 + '%';
         }
       }
 
-      var identity6 = setInterval(scene6, 10);
-    }
+    
   </script>
 </body>
 </html>
