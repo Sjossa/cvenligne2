@@ -1,19 +1,24 @@
+/* Styles pour le corps de la page */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #000000;
+  background-color: #000;
+  position: relative;
 }
 
+/* Styles pour l'élément .arcade */
 .arcade {
   width: 100%;
   height: 100%;
   background-color: #000;
-  
   border-radius: 10px;
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
   overflow: hidden;
 }
 
@@ -21,11 +26,13 @@ body {
   width: 100%;
   height: 100%;
   background: linear-gradient(white, black);
-  background-size: 100% 300%; /* Augmentation de la taille du dégradé */
+  background-size: 100% 300%;
   position: relative;
   overflow: hidden;
-  animation: gradientAnimation 8s linear infinite alternate;}
+  animation: gradientAnimation 5s linear infinite alternate;
+}
 
+/* Animation du dégradé */
 @keyframes gradientAnimation {
   0% {
     background-position: 0 100%;
@@ -35,7 +42,7 @@ body {
   }
 }
 
-
+/* Styles pour les scanlines (lignes de balayage) */
 
 .scanlines {
   width: 200%;
@@ -46,6 +53,7 @@ body {
   transform-origin: bottom;
 }
 
+/* Pseudo-élément pour créer des scanlines supplémentaires */
 .scanlines::after {
   content: "";
   width: 200%;
@@ -57,112 +65,81 @@ body {
   top: 100%;
 }
 
-.scanlines::after {
-  content: "";
-  width: 200%;
-  height: 200%;
-  background: repeating-linear-gradient(45deg, rgba(231, 230, 230, 0.1) 0px, rgba(10, 0, 0, 0.1) 1px, transparent 10px, transparent 2px);
-  position: absolute;
-  animation: scanlines-animation 2s linear infinite ;
-  transform-origin: bottom;
-  top: 100%;
-}
-
+/* Animation des scanlines */
 @keyframes scanlines-animation {
   0% {
-      transform: translateY(0)  ;
+    transform: translateY(0);
   }
   100% {
-      transform: translateY(-10%) ;
+    transform: translateY(-10%);
   }
 }
 
+/* Styles pour les barres de progression */
 
+/* Style du conteneur de barre de progression */
+.progress-container {
+  background-color: #e60e0e;
+  width: 50%;
+  position: relative;
+}
 
+/* Style du conteneur de la barre de progression 6 */
+.progress-container2 {
+  background-color: #ddd;
+  right: 50%;
+  position: relative;
+}
 
+/* Styles des barres de progression individuelles */
+#progress-bar1,
+#progress-bar2,
+#progress-bar3,
+#progress-bar4,
+#progress-bar5,
+#progress-bar6 {
+  width: 1%;
+  height: 30px;
+  color: white;
+  text-align: center;
+  line-height: 30px;
+}
 
+#progress-bar1 {
+  background-color: #b42360;
+}
 
+#progress-bar2 {
+  background-color: #4CAF50;
+}
 
+#progress-bar3,
+#progress-bar4,
+#progress-bar5 {
+  background-color: #4319dd;
+}
 
+#progress-bar6 {
+  background-color: #3923b4;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%; /* Remarquez que la direction a été corrigée pour correspondre à la barre de progression 6 */
+  direction: rtl; /* Direction de droite à gauche pour la progression */
+}
 
-/*barre*/
-#progress-container {
-    background-color: #ddd;
-    width: 50%;
-    position: relative;
+/* Styles pour les images de logo */
+.logo,
+#logo2,
+.logoo {
+  height: 10vh;
+}
 
-     }
+#logo2 {
+  left: 1%;
+}
 
-     #progress-container2 {
-      background-color: #ddd;
-      display:flex;
-      width: 50%;
-      position: absolute;
-      right: 0
-       ;
-       }
-  
-  #progress-bar2 {
-    width: 1%;
-    height: 30px;
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    line-height: 30px;
-    
-  }
-  
-  #progress-bar1 {
-    width: 1%;
-    height: 30px;
-    background-color: #b42360;
-    color: white;
-    text-align: center;
-    line-height: 30px;
-    justify-content: flex-end;
-  }
-
-  #progress-bar6 {
-    width: 1%;
-    height: 30px;
-    background-color: #b42360;
-    color: white;
-    text-align: center;
-    line-height: 30px;
-    position: relative;
-    
-    
-  }
-    
-  #progress-bar3 {
-    width: 1%;
-    height: 30px;
-    background-color: #4319dd;
-    color: white;
-    text-align: center;
-    line-height: 30px;
-  }
-
-  #progress-bar4 {
-    width: 1%;
-    height: 30px;
-    background-color: #4319dd;
-    color: white;
-    text-align: center;
-    line-height: 30px;
-  }
-
-  #progress-bar5 {
-    width: 1%;
-    height: 30px;
-    background-color: #4319dd;
-    color: white;
-    text-align: center;
-    line-height: 30px;
-  }
-
-
-
-.logo{height: 11%;position: relative;top: -2;left: 1%;}
-#logo2{left: 1%;}
-.logoo{height: 10%;position: relative;left: 80%; }
+.logoo {
+  left: 90%;
+}

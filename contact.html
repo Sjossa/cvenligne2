@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="Connor.css">
+    <title>contact</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+    </style>
+</head>
+<body>
+    <img src="r/Ban.png" class="ban">
+    <div>
+        <video autoplay loop muted>
+            <source src="r/tho.mp4">
+        </video>
+    </div>
+    <a href="service.html"><img class="eau" src="r/et.png"></a>
+    <a href="Contact.html"><img class="aire" src="r/FE.png"></a>
+    <br><br><br><br><br>
+    <div class="container">
+        <form action="action_page.php">
+            <label class="mot" for="fname">Cible name:</label>
+            <input type="text" id="fname" name="firstname" placeholder="target name..">
+    
+            <label class="mot" for="lname">Cible last name:</label>
+            <input type="text" id="lname" name="lastname" placeholder="Target last name..">
+    
+            <label for="country">Regions:</label>
+            <input type="text" id="lname" name="lastname" placeholder="Name of Regions">
+    
+            <label class="mot" for="subject">Informations supplémentaires:</label>
+            <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+    
+            <a href="javascript:AccesProtege()">mot de passe</a>
+        </form>
+    </div>
+    
+    <script>
+        function AccesProtege() {
+            self.location.href = prompt("mot de passe") + ".html";
+        }
+    </script>
+</body>
+</html>
