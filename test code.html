@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Auto Focus</title>
+    <script src="script.js"></script>
+    <!--texte clignotant 
+    <style>body {
+        font-family: Arial, sans-serif;
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .container {
+        text-align: center;
+        color: #fff;
+    }
+    
+    .text {
+        font-size: 30px;
+        margin: 0;
+    }
+    
+    .blink {
+        animation: blink 1s linear infinite;
+    }
+    
+    @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }</style> -->
+
+</head>
+<body>
+  <!--  disparaitre input 
+    
+    <form id="myForm">
+        <input type="text" id="firstInput" placeholder="First Name">
+        <button type="button" id="validateBtn">Validate</button>
+        <input type="text" id="secondInput" placeholder="Last Name" style="display: none;">
+    </form>
+<script>
+   document.getElementById("validateBtn").addEventListener("click", function() {
+    var firstInput = document.getElementById("firstInput");
+    var secondInput = document.getElementById("secondInput");
+
+    // Add your validation logic here.
+    // For simplicity, we are assuming that any non-empty string is a valid first name.
+    if (firstInput.value.trim() !== "") {
+        firstInput.style.display = "none";
+        secondInput.style.display = "block";
+        secondInput.focus();
+    } else {
+        alert("Please enter a valid first name.");
+    }
+});
+</script>
+-->
+<!--- ecran nombre de visite et message en direct relié a une basse de donnée 
+<div id="counter">/div>
+<script>function updateCounter() {
+    // Fetch the data from the site's database or API.
+    // Replace the following line with the actual URL of your site's API or database.
+    fetch('https://example.com/api/messages-and-visits')
+        .then(response => response.json())
+        .then(data => {
+            // Calculate the total number of messages and visits received.
+            var total = data.messages + data.visits;
+
+            // Update the counter with the calculated total.
+            document.getElementById('counter').textContent = total;
+        })
+        .catch(error => {
+            console.error('Error fetching messages and visits data:', error);
+        });
+}
+
+// Call the updateCounter function to initialize the counter.
+updateCounter();
+
+// Set an interval to update the counter every second.
+setInterval(updateCounter, 1000);</script>-->
+   
+   <!--texte clignotant
+    <div class="container">
+        <p class="text" id="text"></p>
+    </div>
+    
+
+
+    <script>document.addEventListener('keydown', function(event) {
+        const key = event.key;
+        if (/^[a-zA-Z0-9]+$/.test(key)) {
+            const textElement = document.getElementById('text');
+            textElement.textContent += key;
+            textElement.classList.add('blink');
+            setTimeout(() => {
+                textElement.classList.remove('blink');
+            }, 1000);
+        }
+    });
+    </script>--->
+
+    
+</body>
+</html>
+</body>
+</html>

@@ -2,32 +2,28 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="contact.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
 <!--<div id="con"></div>-->
 <div id="formulaire">
     <fieldset>
-        <form onsubmit="return validateForm()">
-            <div class="prenom">
+        <form action="" methode="get" name="game">
                 <label for="prenom">prenom</label>
-                <input type="text" id="prenom" name="prenom"   focus required>
+                <input type="text" id="prenom" name="game1" maxlength="5" size="5" autofocus onkeyup="suivant(this,'game1',5)">
+                <input type="text" id="prenom" name="game2" maxlength="5"  size="5" autofocus  onkeyup="suivant(this,'game2',5)">
 
-                <label for="Nom">Nom :</label>
-                <input type="text" id="Nom" name="NOM" >
-            </div>
-            <div class="adresse-mail">
-                <label for="adresse-mail">adresse mail</label>
-                <input type="email" id="adresse-mail" name="adresse-mail" >
-            </div>
-            <div class="message">
-                <label for="message">Votre message</label>
-                <textarea id="message" name="message" ></textarea>
-            </div>
-            <div class="bouton-envoyer">
                 <input type="submit" value="Envoyer">
             </div>
+     
         </form>
     </fieldset>
+
+    
 
 </div>
 
