@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="contact.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <title>Contact</title>
 </head>
 <body>
-<!--<div id="con"></div>-->
-<div id="formulaire">
-    <fieldset>
-        <form action="" methode="get" name="game">
-                <label for="prenom">prenom</label>
-                <input type="text" id="prenom" name="game1" maxlength="5" size="5" autofocus onkeyup="suivant(this,'game1',5)">
-                <input type="text" id="prenom" name="game2" maxlength="5"  size="5" autofocus  onkeyup="suivant(this,'game2',5)">
-
-                <input type="submit" value="Envoyer">
-            </div>
-     
-        </form>
-    </fieldset>
-
-    
-
-</div>
-
+    <div id="con">
+        <h1>Contact</h1>
+    </div>
+    <div id="formulaire">
+        <div id="border-content"></div>
+        <fieldset>
+            <form action="" method="get" name="game">
+                <label for="prenom" style="text-align: center;">Veuillez entrer votre prénom :</label><br>
+                <input type="text" id="prenom" name="game1" class="blinking-text" maxlength="10" size="22" autofocus onkeyup="suivant(this,'game1',5)">
+            </form>
+        </fieldset>
+    </div>
 </body>
 </html>

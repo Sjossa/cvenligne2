@@ -1,46 +1,69 @@
-
 body {
-    background-color: black; 
+    background-color: rgb(20, 10, 20); 
     font-family: 'VT323', monospace; 
 }
 
-
- #con{
-        border:  49vh solid transparent; 
-        box-shadow: 0 0 8px 2px #f3f3f3;
-        border-radius: 30px;
-    }
-
-#formulaire{
-   color: #f3f3f3;
+#con {
+    position: fixed;
+    width: 79%;
+    height: 57%;
+    border: 10vw solid transparent;
+    border-radius: 5vw;
+    box-shadow: 0 0 8px 2px #f8f7f7;
 }
 
-input, textarea {
+h1 {
+    color: #fdfbfb;
+    position: relative;
+    top: -30vh;
+    text-align: center;
+    font-size: 15vh
+}
+
+#formulaire {
+    position: absolute;
+    display: flex;
+    
+    left: 35%;
+    margin-top: 25%;
+    color: #cc1010;
+    font-size: 5Vh;
+}
+
+input, textarea , fieldset {
     border: none;
     background: transparent;
-    color: #f3f3f3;
+    color: #f7efef;
     outline: none;
-    }
+    height: 14vh;
+    font-size: 50VH;
+    font-family: 'VT323', monospace; 
+}
 
-   
+input[type="text"]{
 
-
-  
-
+    font-family: 'VT323',monospace;
+    font-size: 16px;
+    color: #f7efef;
+    text-decoration: underline;
+}
+input[type="text"].no-underline {
+    text-decoration-skip-ink: none ;
+}
 
 /*
-.image-clignote  {
+.image-clignote {
     animation-duration: 1s;
     animation-name: clignoter;
     animation-iteration-count: infinite;
     transition: none;
- }
- 
- @keyframes clignoter {
-   0%   { opacity:1; }
-   40%   {opacity:0; }
-   100% { opacity:1; }
- }
+}
+
+@keyframes clignoter {
+    0% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 1; }
+}
 */
 
 
