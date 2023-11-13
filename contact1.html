@@ -17,11 +17,12 @@
         <h1>Contact</h1>
     </div>
     <div id="formulaire">
-        <div id="border-content"></div>
+        <div class="border-content"></div>
         <fieldset>
             <form action="" method="get" name="game">
-                <label for="prenom" style="text-align: center;">Veuillez entrer votre prénom :</label><br>
-                <input type="text" id="prenom" name="game1" class="blinking-text" maxlength="10" size="22" autofocus onkeyup="suivant(this,'game1',5)">
+                <label for="prenom">Veuillez entrer votre prénom :</label><br>
+                <input type="text" id="prenom" name="game" maxlength="10" size="10" autofocus oninput="changeInput(this, 'nom', 5)">
+                <input type="button" id="valider" value="Valider">
             </form>
         </fieldset>
     </div>
