@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="contact.js"></script>
+    <script src="contact.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-
-    <title>Contact</title>
 </head>
 <body>
-    <div id="con">
+    <div  id="con">
         <h1>Contact</h1>
     </div>
     <div id="formulaire">
         <div class="border-content"></div>
-        <fieldset>
-            <form action="" method="get" name="game">
-                <label for="prenom">Veuillez entrer votre prénom :</label><br>
-                <input type="text" id="prenom" name="game" maxlength="10" size="10" autofocus oninput="changeInput(this, 'nom', 5)">
-                <input type="button" id="valider" value="Valider">
-            </form>
-        </fieldset>
+        <form action="contact.php" method="post" name="game">
+            <fieldset>
+                <label for="prenom"> entrer votre prénom :</label><br>
+                <input type="text" id="prenom" name="prenom" maxlength="25" size="10" style="display: block;" autofocus oninput="changeInput(this, 'prenom', 5)">
+                <input type="button" id="valider" value="Valider" onclick="changerInput()">
+            </fieldset>
+        </form>
     </div>
 </body>
 </html>
+
+

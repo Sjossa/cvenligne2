@@ -21,11 +21,10 @@ h1 {
 }
 
 #formulaire {
-    position: absolute;
+    position: fixed;
     display: flex;
     left: 35%;
     margin-top: 25%;
-    color: #cc1010;
     font-size: 5vh;
 }
 
@@ -34,13 +33,11 @@ input, textarea, fieldset {
     background: transparent;
     color: #f7efef;
     outline: none;
-    height: 14vh;
-    font-size: 5vh;
     font-family: 'VT323', monospace; 
 }
 
-label{
-    animation-duration: 5s;
+label {
+    animation-duration: 4s;
     animation-name: clignoter;
     animation-iteration-count: infinite;
     transition: none;
@@ -48,13 +45,13 @@ label{
 
 @keyframes clignoter {
     0% { opacity: 1; }
-    40% { opacity: 0; }
+    40% { opacity: 0.1; }
     100% { opacity: 1; }
 }
 
-input[type="text"] {
+input {
     font-family: 'VT323', monospace;
-    font-size: 100px;
+    font-size: 10vh;
     color: #f1e3e3;
 }
 
@@ -62,9 +59,14 @@ input[type="text"] {
     display: none;
 }
 
-#valider{
+#valider {
     cursor: pointer;
+    position: absolute;
+    font-size: 5vh;
 }
+
+
+
 
 
 
