@@ -1,4 +1,3 @@
-
 // Attendez que le DOM soit entièrement chargé avant d'attacher des écouteurs d'événements
 document.addEventListener("DOMContentLoaded", function () {
     // Attachez une fonction pour changer l'input lorsqu'on clique sur le bouton "valider"
@@ -12,75 +11,106 @@ document.addEventListener("DOMContentLoaded", function () {
     }, true);
 });
 
-
-
-
-// État initial du formulaire : attend un prénom
+var formulaireData = {};
 var etatFormulaire = "prenom";
+var coffre = {
+    prenom: "",
+    nom: "",
+    email: ""
+};
 
-// Fonction principale pour changer l'input en fonction de l'état actuel
-function changerInput() {
-    // Obtenez l'élément input actuel
-    var inputActuel;
+function envoyerFormulaire() {
+    var formulaire = document.forms["game"];
 
-    if (etatFormulaire === "prenom") {
-        inputActuel = document.getElementsByName("prenom")[0];
-        changerInputPrenom(inputActuel);
-    } else if (etatFormulaire === "nom") {
-        inputActuel = document.getElementsByName("nom")[0];
-        changerInputNom(inputActuel);
-    } else if (etatFormulaire === "email") {
+    if (formulaire) {
+        // Utilisation directe des valeurs des champs
+        coffre.prenom = formulaire.prenom ? formulaire.prenom.value : "";
+        coffre.nom = formulaire.nom ? formulaire.nom.value : "";
+        coffre.email = formulaire.email ? formulaire.email.value : "";
+
+        // Enregistrez les données dans la base de données ou effectuez d'autres opérations nécessaires ici
+        console.log("Données du formulaire prêtes à être envoyées :", coffre);
+    } else {
+        console.error("Le formulaire n'a pas été trouvé.");
     }
 }
 
-// Fonction spécifique pour changer de l'état "prenom" à "nom"
+function changerInput() {
+    var inputActuel;
+
+    switch (etatFormulaire) {
+        case "prenom":
+            inputActuel = document.getElementsByName("prenom")[0];
+            changerInputPrenom(inputActuel);
+            console.log("État du formulaire : prénom");
+            break;
+
+        case "nom":
+            inputActuel = document.getElementsByName("nom")[0];
+            changerInputGenerique(inputActuel, "email", "email", "votre e-mail");
+            console.log("État du formulaire : nom");
+            break;
+
+        case "email":
+            var emailInput = document.getElementsByName("email")[0];
+            if (validationEmailReussie(emailInput.value)) {
+                envoyerFormulaire();
+                etatFormulaire = "soumission";
+                console.log("État du formulaire : soumission");
+            } else {
+                console.log("Validation de l'e-mail échouée. Ne soumettez pas le formulaire.");
+            }
+            break;
+
+        case "soumission":
+            envoyerFormulaire(); // Appel de la fonction à la fin du processus du formulaire
+            console.log("État du formulaire : soumission");
+            break;
+    }
+}
+
 function changerInputPrenom(inputActuel) {
-    changerInputGenerique(inputActuel, "text", "nom", "votre nom",);
-    // Vous pouvez ajouter des actions supplémentaires si nécessaire
+    changerInputGenerique(inputActuel, "text", "nom", "votre nom");
 }
 
-// Fonction spécifique pour changer de l'état "nom" à "email"
-function changerInputNom(inputActuel) {
-    changerInputGenerique(inputActuel, "email", "email", "votre e-mail",);
-    // Vous pouvez ajouter des actions supplémentaires si nécessaire
-}
-
-// Fonction générique pour le changement d'input
-function changerInputGenerique(inputActuel, type, inputSuivant, labelSuivant,) {
-    // Vérifiez si l'élément actuel a été trouvé
+function changerInputGenerique(inputActuel, type, inputSuivant, labelSuivant) {
     if (!inputActuel) {
         console.error("L'élément n'a pas été trouvé.");
         return;
     }
 
-    // Vérifiez si la valeur de l'input actuel est valide
-    if (inputActuel.value.trim() !== "") {
-        // Créez un nouvel input pour le type suivant
+    var valeurInputActuel = inputActuel.value.trim();
+
+    if (valeurInputActuel !== "") {
+        // Stocker la valeur dans l'objet coffre avant le remplacement
+        coffre[inputActuel.name] = valeurInputActuel;
+
         var nouvelInput = document.createElement("input");
         nouvelInput.type = type;
         nouvelInput.id = inputSuivant;
         nouvelInput.name = inputSuivant;
-        nouvelInput.maxLength = 25; // Mettez à jour la longueur maximale au besoin
-        nouvelInput.size = 20; // Mettez à jour la taille au besoin
-     
-    
+        nouvelInput.maxLength = 25;
+        nouvelInput.size = 20;
 
-        // Remplacez l'input actuel par le nouvel input
-        inputActuel.parentNode.replaceChild(nouvelInput, inputActuel);
+        var parent = inputActuel.parentNode; // Récupérer le parent de l'input actuel
 
-        // Mettez à jour le label de l'input actuel pour indiquer le changement
+        // Remplacer l'input actuel par le nouvel input
+        inputActuel.replaceWith(nouvelInput);
+
         var labelActuel = document.querySelector('label[for="' + inputActuel.id + '"]');
         if (labelActuel) {
             labelActuel.textContent = "Veuillez entrer " + labelSuivant + " :";
             labelActuel.htmlFor = nouvelInput.id;
         }
-        // Affichez et focussez sur le nouvel input
+
         nouvelInput.style.display = "block";
         nouvelInput.focus();
 
-        // Mettez à jour l'état du formulaire
         etatFormulaire = inputSuivant;
     }
 }
 
-
+function validationEmailReussie(email) {
+    var pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    return pattern.test(email);
+}

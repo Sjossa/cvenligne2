@@ -7,31 +7,42 @@
 </head>
 <body>
 <?php
-    // Connexion à la base de données MySQL
-    $con = mysqli_connect("localhost", "root", "", "cv");
-    if (mysqli_connect_errno()) {
-        echo "Erreur : " . mysqli_connect_error();
-        exit(); // Quitte le script en cas d'erreur de connexion
+    // Vérifie si le formulaire a été soumis
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Récupère les données du formulaire
+        $prenom = isset($_POST["prenom"]) ? $_POST["prenom"] : "";
+        $nom = isset($_POST["nom"]) ? $_POST["nom"] : "";
+        $email = isset($_POST["email"]) ? $_POST["email"] : "";
+
+        // Connexion à la base de données MySQL
+        $con = mysqli_connect("localhost", "root", "", "cv");
+
+        // Vérifier la connexion
+        if (!$con) {
+            die("Erreur : " . mysqli_connect_error());
+        }
+
+        // Échapper les données pour éviter les injections SQL
+        $prenom = mysqli_real_escape_string($con, $prenom);
+        $nom = mysqli_real_escape_string($con, $nom);
+        $email = mysqli_real_escape_string($con, $email);
+
+        // Requête SQL pour insérer les données dans la table appropriée
+        $query = "INSERT INTO utilisateur (prenom, nom, email) VALUES ('$prenom', '$nom', '$email')";
+
+        // Exécution de la requête
+        if (mysqli_query($con, $query)) {
+            echo "Enregistrement réussi dans la base de données.";
+        } else {
+            echo "Erreur lors de l'enregistrement : " . mysqli_error($con);
+        }
+
+        // Fermer la connexion à la base de données
+        mysqli_close($con);
     }
+    var_dump($_POST);
 
-   // Récupération des données soumises par le formulaire
-$prenom = $_POST['prenom'];
-$nom = $_POST['nom'];
-$email = $_POST['email'];
-
-// Requête SQL pour insérer les données dans la table appropriée
-$sql = "INSERT INTO utilisateur (prenom,nom, email) VALUES ('$prenom','nom','email')";
-
-//execution
-if($mysqli ->query($sql) === TRUE) {
-    echo "donnée envoyées ";
-} else {
-    echo "pas envoyé " . $mysqli -> error;}
-
-    //fermeture de la base de donnée 
-    $mysqli ->close();
-
-
+    
 ?>
 </body>
 </html>
