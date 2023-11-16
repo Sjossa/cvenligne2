@@ -12,20 +12,33 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div  id="con">
+    <div id="con">
         <h1>Contact</h1>
     </div>
     <div id="formulaire">
         <div class="border-content"></div>
-        <form action="contact.php" method="post" name="game">
+        <form action="contact.php" method="post" name="game" id="myForm">
             <fieldset>
-                <label for="prenom"> entrer votre prénom :</label><br>
-                <input type="text" id="prenom" name="prenom" maxlength="25" size="10" style="display: block;" autofocus oninput="changeInput(this, 'prenom', 5)">
+                <input type="text" id="inputprenom" name="prenom" maxlength="25" size="10" autofocus>
+
+                <input type="text" id="inputnom" name="nom" maxlength="25" size="10"  autofocus>
+
+                <input type="email" id="inputemail" name="email" maxlength="25" size="10"  autofocus>
+
                 <input type="button" id="valider" value="Valider" onclick="changerInput()">
             </fieldset>
         </form>
     </div>
+    <script>
+        
+    </script>
+
+
+
+
 </body>
 </html>
+
+    
 
 
