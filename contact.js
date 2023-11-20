@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("valider").addEventListener("click", changerInput);
     document.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -7,13 +6,42 @@ document.addEventListener("DOMContentLoaded", function () {
     }, true);
 });
 
-function changeinput(){
+function changeinput() {
+    var button = document.getElementById('valider');
+    var prenom = 'inputprenom';
+    var nom = 'inputnom';
+    var email = 'inputemail';
 
-    var bouton = document.getElementById(valider);
+    button.addEventListener('click', function changement() {
+        if (document.getElementById(prenom).style.display === 'block') {
+            
+            document.getElementById(prenom).style.display = 'none'; 
+            document.getElementById(nom).style.display = 'block';
+            document.getElementById(email).style.display = 'none';
+        } else if (document.getElementById(nom).style.display === 'block') {
+            document.getElementById(prenom).style.display = 'none'; 
+            document.getElementById(nom).style.display = 'none';
+            document.getElementById(email).style.display = 'block';
+        } else {
+            // Récupérer la valeur de l'adresse e-mail
+            var emailValue = document.getElementById(email).value;
 
-    bouton.addEventListener("click",function)
-    
-  
+            // Expression régulière pour vérifier le format de l'e-mail
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+            // Tester l'adresse e-mail avec la regex
+            if (emailRegex.test(emailValue)) {
+                var formulaire = document.getElementById('myForm');
+                formulaire.submit();
+            } 
+        }
+    });
 }
+
+
+
+
+
+
+
 

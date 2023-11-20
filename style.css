@@ -2,7 +2,7 @@ body {
     background-color: rgb(20, 10, 20);
     font-family: 'VT323', monospace;
 }
-/*ne plus touché*/
+
 #con {
     position: fixed;
     width: 79%;
@@ -23,18 +23,19 @@ h1 {
 #formulaire {
     position: fixed;
     display: flex;
+    flex-direction: column; /* Stack items vertically */
     left: 35%;
     margin-top: 25%;
     font-size: 5vh;
 }
+
 input, textarea, fieldset {
     background: transparent;
-    color: #f7efef;
+    color: #f00e0e;
     outline: none;
     font-family: 'VT323', monospace;
 }
 
-/*touché*/
 label {
     animation-duration: 0.1s;
     animation-name: clignoter;
@@ -51,16 +52,7 @@ label {
 input {
     font-family: 'VT323', monospace;
     font-size: 10vh;
-    color: #f1e3e3;
-}
-#inputnom{
-    position: fixed;
-    right: 84.4vh;
-
-}
-#inputemail{
-    position: fixed;
-    top: -10.5vh;
+    color: #c90a0a;
 }
 
 
@@ -70,6 +62,7 @@ input {
     position: absolute;
     font-size: 5vh;
 }
+
 
 
 
