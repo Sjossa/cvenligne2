@@ -30,14 +30,16 @@ h1 {
 }
 
 input, textarea, fieldset {
+    border: none;
     background: transparent;
-    color: #f00e0e;
+    color: #fcf8f8;
     outline: none;
+    caret-color:rgb(250, 8, 8);
     font-family: 'VT323', monospace;
 }
 
 label {
-    animation-duration: 0.1s;
+    animation-duration: 2s;
     animation-name: clignoter;
     animation-iteration-count: infinite;
     transition: none;
@@ -52,23 +54,10 @@ label {
 input {
     font-family: 'VT323', monospace;
     font-size: 10vh;
-    color: #c90a0a;
 }
-
-
 
 #valider {
     cursor: pointer;
     position: absolute;
     font-size: 5vh;
 }
-
-
-
-
-
-
-
-
-
-

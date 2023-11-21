@@ -4,6 +4,9 @@
         "etat",
         "focussez",
         "Generique",
+        "labelemail",
+        "labelnom",
+        "labelprenom",
         "prenom"
     ]
 }

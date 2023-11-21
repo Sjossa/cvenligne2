@@ -45,6 +45,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($con);
 }
 ?>
-
 </body>
 </html>
+
+<?php
+header('Location: default_index.html');
+exit();
+?>
