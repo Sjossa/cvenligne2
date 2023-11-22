@@ -1,11 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <!-- Lien vers la feuille de style externe -->
+  <link rel="stylesheet" type="text/css" href="index.css">
+
+  <!-- Inclusion du fichier JavaScript -->
+  <script src="index.js"></script>
+
+  <!-- Configuration du titre du document et des balises méta -->
+  <title>Accueil</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Importation d'une police Google -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
 </head>
 <body>
-    <a href="contact.html">aa</a>
+  <!-- Section en-tête -->
+  <div class="Titre">
+    <p>Page de présentation</p>
+  </div>
+
+  <!-- Section du contenu principal -->
+  <div class="fleche">
+    <!-- Section de fond vidéo -->
+    <div id="gi">
+      <video autoplay muted loop src="re/fond mp4.mp4"></video>
+    </div>
+
+    <!-- Section d'introduction -->
+    <div id="patron">
+      <p>
+        Bonjour ! Je suis Johnny, un passionné de développement web. Avec une expertise dans les langages front-end tels que HTML, CSS et JavaScript,
+        je crée des interfaces utilisateur interactives et esthétiques. Mon dévouement à concevoir des expériences utilisateur exceptionnelles et ma soif
+        d'apprendre les dernières tendances du web me permettent de réaliser des projets web captivants. Toujours prêt à relever de nouveaux défis,
+        je mets en œuvre des solutions créatives pour façonner l'avenir du web. En tant que développeur web, je suis convaincu que chaque ligne de code
+        est une opportunité d'innover et de repousser les limites. Codons et créons ensemble ! 🚀
+      </p>
+    </div>
+
+    <!-- Section du menu Burger -->
+    <div id="MOI" class="burger">
+      <a href="javascript:void(0)" class="fermeture" onclick="playAudio(); openNav();">
+        <h4>INSÉRER UNE PIÈCE<br>POUR JOUER</h4>
+      </a>
+    </div>
+    <audio id="myAudio" src="re/CLIP - NOOB - Je suis un Noob (opening).mp3" autoplay></audio>
+  </div>
+
+  <!-- Section de l'exemple -->
+  <div class="example-wrapper">
+    <div class="arrow-example -hidden">
+      <!-- Points d'exemple pour la démonstration -->
+      <div class="dot -center"></div>
+      <div class="dot -center"></div>
+      <div class="dot -center"></div>
+      <div class="dot -center"></div>
+      <div class="dot -center"></div>
+      <div class="dot -center"></div>
+      <div class="dot -left-1"></div>
+      <div class="dot -left-2"></div>
+      <div class="dot -right-1"></div>
+      <div class="dot -right-2"></div>
+    </div>
+  </div>
+
+  <!-- Bouton du menu -->
+  <button id="openButton">Menu</button>
+
+  <!-- Section du menu de navigation -->
+  <div id="menu">
+    <h1 style="text-align: center;">choisissez votre page</h1>
+
+    <!-- Section du carrousel d'images -->
+    <div class="defilant">
+      <img class="site" src="re/blue.jpg">
+      <img class="site" src="re/Screenshot_1.png">
+    </div>
+
+    <!-- Boutons de navigation pour le carrousel d'images -->
+    <button class="fle" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="efl" onclick="plusDivs(1)">&#10095;</button>
+
+    <!-- Bouton de fermeture pour le menu -->
+    <button id="close">&#10007;</button>
+  </div>
 </body>
 </html>

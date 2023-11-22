@@ -1,0 +1,357 @@
+/* Réinitialisation des styles de base du document */
+body {
+    font-family: 'Press Start 2P', cursive;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styles pour le fond vidéo et le texte centré */
+  #gi video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+  }
+  
+  /* Styles pour le titre de la page */
+  .Titre {
+    text-align: center;
+    color: #4b044b;
+    background-color: rgb(163, 4, 255);
+    opacity: 0.8;
+    display: inline;
+    text-shadow: rgb(149, 228, 4) 0.1em 0.1em 0.2em;
+    font-size: 5em;
+  }
+  
+  /* Styles pour la section d'introduction */
+  #patron {
+    color: midnightblue;
+    position: relative;
+    top: 35vh;
+    background: transparent;
+    opacity: 0.8;
+    font-weight: lighter;
+    text-shadow: rgb(161, 25, 48) 0.1em 0.1em 0.2em;
+    background-color: rgb(99, 66, 99);
+    opacity: 0.8;
+    display: inline;
+  }
+  
+  /* Styles pour les éléments communs à toutes les sections */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styles pour la section du fond vidéo */
+  #gi {
+    height: 1vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -5;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  
+  /* Styles pour les boutons */
+  button {
+    background-color: #a204ec;
+    position: fixed;
+    margin-left: 49.6vw;
+    top: 90vh;
+    text-align: center;
+  }
+  
+  /* Styles pour le menu du bas */
+  #menu {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background-color: #c5c4c7;
+    transition: bottom 1s ease;
+    height: 100%;
+  }
+  
+  /* Styles pour la section du carrousel d'images */
+  .defillant {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+    position: relative;
+    margin-top: 4vh;
+  }
+  
+  /* Styles pour le bouton de fermeture du menu */
+  #close {
+    border: none;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: 2%;
+    left: 49%;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    color: #ffee02;
+    font-size: 3em;
+  }
+  
+  /* Styles pour les images du carrousel */
+  .site {
+    max-width: 50%;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+  }
+  
+  /* Styles pour les boutons de navigation du carrousel */
+  .fle {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #ffee02;
+    background-color: #4d03975a;
+    position: absolute;
+    top: 50%;
+    right: 80%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(-0%, -50%);
+    font-size: 3em;
+  }
+  
+  .efl {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #ffee02;
+    background-color: #4d03975a;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    font-size: 3em;
+  }
+  
+  /* Styles pour la flèche d'exemple */
+  :root {
+    --arrow-height: 150px;
+    --arrow-width: calc(var(--arrow-height) * 5 / 6);
+    --dot-size: calc(var(--arrow-height) / 6);
+  }
+  
+  .example-wrapper {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  .arrow-example {
+    position: relative;
+    height: var(--arrow-height);
+    width: var(--arrow-width);
+    will-change: opacity, transform;
+    transition: all .3s cubic-bezier(.43, .27, .36, .83);
+  
+    > .dot {
+      position: absolute;
+      bottom: 0;
+      left: calc(var(--dot-size) * 2);
+      height: var(--dot-size);
+      width: var(--dot-size);
+      will-change: transform;
+      transition: transform .3s cubic-bezier(.43, .27, .36, .83);
+  
+      &:after {
+        content: '';
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        display: block;
+        height: 60%;
+        width: 60%;
+        background: #a204ec;
+      }
+  
+      &.-center {
+        &:nth-of-type(1) { bottom: 0; }
+        &:nth-of-type(2) { bottom: var(--dot-size); }
+        &:nth-of-type(3) { bottom: calc(var(--dot-size) * 2); }
+        &:nth-of-type(4) { bottom: calc(var(--dot-size) * 3); }
+        &:nth-of-type(5) { bottom: calc(var(--dot-size) * 4); }
+        &:nth-of-type(6) { bottom: calc(var(--dot-size) * 5); }
+      }
+  
+      &.-left-1 {
+        bottom: calc(var(--dot-size) * 1);
+        left: calc(var(--dot-size) * 1);
+      }
+  
+      &.-left-2 {
+        bottom: calc(var(--dot-size) * 2);
+        left: 0;
+      }
+  
+      &.-right-1 {
+        bottom: calc(var(--dot-size) * 1);
+        left: calc(var(--dot-size) * 3);
+      }
+  
+      &.-right-2 {
+        bottom: calc(var(--dot-size) * 2);
+        left: calc(var(--dot-size) * 4);
+      }
+    }
+  
+    &.-hidden {
+      opacity: 0;
+      transform: translateY(calc(var(--dot-size) * -2));
+  
+      > .dot {
+        &:nth-of-type(1) {
+          transform:
+            translateX(calc(var(--dot-size) * 1))
+            translateY(calc(var(--dot-size) * 1));
+        }
+  
+        &:nth-of-type(2) {
+          transform:
+            translateX(calc(var(--dot-size) * -1))
+            translateY(calc(var(--dot-size) * -3));
+        }
+  
+        &:nth-of-type(3) {
+          transform:
+            translateX(calc(var(--dot-size) * -2))
+            translateY(calc(var(--dot-size) * 1));
+        }
+  
+        &:nth-of-type(4) {
+          transform:
+            translateX(calc(var(--dot-size) * 2))
+            translateY(calc(var(--dot-size) * -3));
+        }
+  
+        &:nth-of-type(5) {
+          transform:
+            translateX(calc(var(--dot-size) * -2))
+            translateY(calc(var(--dot-size) * -3));
+        }
+  
+        &:nth-of-type(6) {
+          transform:
+            translateX(calc(var(--dot-size) * 3))
+            translateY(calc(var(--dot-size) * 1));
+        }
+  
+        &:nth-of-type(7) {
+          transform:
+            translateX(calc(var(--dot-size) * -2))
+            translateY(calc(var(--dot-size) * -2));
+        }
+  
+        &:nth-of-type(8) {
+          transform:
+            translateX(calc(var(--dot-size) * 2))
+            translateY(calc(var(--dot-size) * -1));
+        }
+  
+        &:nth-of-type(9) {
+          transform:
+            translateX(calc(var(--dot-size) * 1))
+            translateY(calc(var(--dot-size) * 1));
+        }
+  
+        &:nth-of-type(10) {
+          transform:
+            translateX(calc(var(--dot-size) * -1))
+            translateY(calc(var(--dot-size) * -3));
+        }
+      }
+    }
+  }
+  
+  /* Styles pour le grand menu */
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .burger {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 1s;
+    background: url(re/pac2.gif) no-repeat center fixed;
+    background-size: cover;
+  }
+  
+  .fermeture {
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  h4 {
+    margin-top: 52vh;
+    font-family: 'Silkscreen', cursive;
+    font-size: 4em;
+    animation: bling 0.5s infinite;
+    background-color: transparent;
+  }
+  
+  .pacman {
+    max-width: 100%;
+  }
+  
+  .image1 {
+    max-width: 100%;
+    display: none;
+  }
+  
+  @keyframes bling {
+    from { color: rgb(223, 250, 18); }
+    to { color: orangered; }
+  }
+  
+  @media only screen and (max-width: 800px) {
+    h4 {
+      margin-top: 42vh;
+      font-family: 'Silkscreen', cursive;
+      font-size: 3.5em;
+      animation: bling 0.5s infinite;
+      background-color: chartreuse;
+    }
+  
+    body {
+      background-color: rgb(0, 0, 95);
+    }
+  }
+  

@@ -1,0 +1,77 @@
+/* Styles généraux pour le corps de la page */
+body {
+    background-color: rgb(20, 10, 20);
+    font-family: 'VT323', monospace;
+}
+
+/* Style pour la section "con" */
+#con {
+    position: fixed;
+    width: 79%;
+    height: 57%;
+    border: 10vw solid transparent; /* Ajout du point-virgule */
+    border-radius: 5vw;
+    box-shadow: 0 0 8px 2px #f8f7f7;
+}
+
+/* Style pour le titre h1 dans la section "con" */
+h1 {
+    color: #fdfbfb;
+    position: relative;
+    top: -30vh;
+    text-align: center;
+    font-size: 15vh;
+}
+
+/* Style pour la section "formulaire" */
+#formulaire {
+    position: fixed;
+    display: flex;
+    flex-direction: column; /* Aligner les éléments verticalement */
+    left: 35%;
+    margin-top: 25%;
+    font-size: 5vh;
+}
+
+/* Styles pour les éléments input, textarea et fieldset */
+input, textarea, fieldset {
+    border: none;
+    background: transparent;
+    color: #fcf8f8;
+    outline: none;
+    caret-color: rgb(250, 8, 8);
+    font-family: 'VT323', monospace;
+}
+
+/* Style pour les étiquettes (labels) avec animation */
+label {
+    animation-duration: 2s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+}
+
+/* Animation clignotante pour les étiquettes */
+@keyframes clignoter {
+    0% { opacity: 1; }
+    40% { opacity: 0.1; }
+    100% { opacity: 1; }
+}
+
+/* Style spécifique pour les éléments input */
+input {
+    font-family: 'VT323', monospace;
+    font-size: 10vh;
+}
+
+/* Style pour le bouton "Valider" */
+#valider {
+    cursor: pointer;
+    position: absolute;
+    font-size: 5vh;
+}
+
+/* Style pour la table */
+table {
+    background-color: aqua;
+}
