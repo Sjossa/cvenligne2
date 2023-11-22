@@ -1,40 +1,44 @@
 /* Styles généraux pour le corps de la page */
+@media only screen and (min-width: 1366px) and (min-height: 768px){
+ 
 body {
-    background-color: rgb(20, 10, 20);
+    background-color: rgb(7, 7, 7);
     font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    border: 2px solid #f7f6f6;
+    box-sizing: border-box;
+border-radius: 5vw;
+box-shadow: 0 0 8px 2px #f8f7f7;
+overflow: hidden;
 }
-
-/* Style pour la section "con" */
-#con {
-    position: fixed;
-    width: 79%;
-    height: 57%;
-    border: 10vw solid transparent; /* Ajout du point-virgule */
-    border-radius: 5vw;
-    box-shadow: 0 0 8px 2px #f8f7f7;
-}
-
-/* Style pour le titre h1 dans la section "con" */
+/* Style pour le titre h1 */
 h1 {
+   position: relative;
     color: #fdfbfb;
-    position: relative;
-    top: -30vh;
-    text-align: center;
-    font-size: 15vh;
+    font-size: 5vw;
+display: flex;
+align-items: center;
+justify-content: center;
+
 }
+
 
 /* Style pour la section "formulaire" */
 #formulaire {
-    position: fixed;
+    position: relative;
     display: flex;
-    flex-direction: column; /* Aligner les éléments verticalement */
-    left: 35%;
-    margin-top: 25%;
-    font-size: 5vh;
+    flex-direction: column;
+    flex-grow: 1;
+    font-size: 40vh;
+    top:30vh;
+
+  
 }
 
 /* Styles pour les éléments input, textarea et fieldset */
-input, textarea, fieldset {
+textarea, fieldset {
     border: none;
     background: transparent;
     color: #fcf8f8;
@@ -48,7 +52,13 @@ label {
     animation-duration: 2s;
     animation-name: clignoter;
     animation-iteration-count: infinite;
-    transition: none;
+    color: red;
+    font-size: 5vh;
+    position: fixed;
+    top: 50%; /* Au lieu de top: 30vh; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+   
 }
 
 /* Animation clignotante pour les étiquettes */
@@ -58,20 +68,54 @@ label {
     100% { opacity: 1; }
 }
 
-/* Style spécifique pour les éléments input */
-input {
-    font-family: 'VT323', monospace;
-    font-size: 10vh;
+input[type=text] ,input[type=email]{
+
+font-size: 5vw;
+font-family: 'VT323', monospace;
+position: fixed;
+top: 55vh;
+outline: none;
+background: transparent;
+border: none;
+font-family: 'VT323', monospace;
 }
 
-/* Style pour le bouton "Valider" */
-#valider {
+
+
+input[type=button] {
     cursor: pointer;
-    position: absolute;
-    font-size: 5vh;
+    font-size: 5vw;
+
+    position: fixed;
+ top: 65%;
 }
 
 /* Style pour la table */
 table {
-    background-color: aqua;
+    position: relative;
+    display: flex;
+align-items: center;
+justify-content: center;
+    color: #fdfbfb;
+    font-size: 2.5vw;
+top: -22vw;
+
+
+
+
+
+ 
+    animation-duration: 3s;
+    animation-name: clignoter;
+    animation-iteration-count: infinite;
+    transition: none;
+
+    
+
+
+
+
+  
 }
+
+ }
