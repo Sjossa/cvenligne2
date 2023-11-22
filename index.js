@@ -55,7 +55,22 @@ function showDivs(n) {
 function openNav() {
   document.getElementById("MOI").style.width = "0%";
   patron();
+
+  $.ajax({
+    type: 'POST',
+    url: 'index.php',
+    data: { key: 'id' },
+    success: function(response) {
+      // Le code à exécuter en cas de succès de la requête
+      console.log('Données envoyées avec succès !');
+    },
+    error: function(error) {
+      // Le code à exécuter en cas d'erreur de la requête
+      console.error('Erreur lors de l\'envoi des données :', error);
+    }
+  });
 }
+
 
 // Fonction pour jouer l'audio
 function playAudio() {

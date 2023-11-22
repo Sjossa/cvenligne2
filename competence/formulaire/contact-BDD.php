@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_close($con);
 
         // Redirection vers default_index.html
-        header('Location: default_index.html');
+        header('Location: ../../index.html');
         exit();
     } else {
         echo "Erreur lors de l'enregistrement : " . mysqli_error($con);
